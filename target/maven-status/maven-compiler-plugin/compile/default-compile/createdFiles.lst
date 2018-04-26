@@ -1,0 +1,6 @@
+com\gv\mongodb\Test1\services\TestModelService.class
+com\gv\mongodb\Test1\repositories\TestModelRepository.class
+com\gv\mongodb\Test1\models\TestModel.class
+com\gv\mongodb\Test1\controllers\TestModelController.class
+com\gv\mongodb\Test1\services\TestModelServiceImpl.class
+com\gv\mongodb\Test1\Application.class
