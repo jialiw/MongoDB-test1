@@ -27,6 +27,15 @@ public class TestModelController {
 	public ResponseEntity<List<TestModel>> getAllModels(@RequestParam(value="limit", required=false) Integer limit) {
 		return new ResponseEntity<List<TestModel>>(testModelService.getAllModels(limit), HttpStatus.OK);
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/model/", method = RequestMethod.GET) 
+	public ResponseEntity<List<TestModel>> getModelByMultiPara(@RequestParam(value="naccid", required=false) String naccid, 
+																@RequestParam(value="year", required=false) String year,
+																@RequestParam(value="day", required=false) String day) {
+		return new ResponseEntity<List<TestModel>>(testModelService.getModelByMultiPara(naccid, day, year), HttpStatus.OK);
+	}
+							
 
 	@ResponseBody
 	@RequestMapping(value = "/model/naccid/", method = RequestMethod.GET)

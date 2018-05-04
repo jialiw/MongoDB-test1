@@ -71,5 +71,19 @@ public class TestModelRepositoryCustomImpl implements TestModelRepositoryCustom{
 		}
 	}
 
+	@Override
+	public List<TestModel> findAllByMultiPara(String naccid, String year, String day) {
+		final Query query = new Query();
+		boolean naccidIsNull = naccid == null;
+		boolean yearIsNull = year == null;
+		boolean dayIsNull = day == null;
+		if (naccidIsNull && yearIsNull && dayIsNull) return null;
+		if (!naccidIsNull) query.addCriteria(Criteria.where("NACCID").is(naccid));
+		if (!yearIsNull) query.addCriteria(Criteria.where("VISITYR").is(year));
+		if (!dayIsNull) query.addCriteria(Criteria.where("VISITDAY").is(day));
+		
+		return mongoTemplate.find(query, TestModel.class);
+	}
+
 	
 }

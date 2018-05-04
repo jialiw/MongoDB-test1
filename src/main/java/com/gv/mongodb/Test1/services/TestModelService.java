@@ -14,6 +14,8 @@ public interface TestModelService {
 	List<TestModel> getModelByVisitDay(String day);
 	
 	List<TestModel> getModelByVisitYear(String year);
+	
+	List<TestModel> getModelByMultiPara(String naccid, String day, String year);
 
 	TestModel addModel(TestModel tm);
 

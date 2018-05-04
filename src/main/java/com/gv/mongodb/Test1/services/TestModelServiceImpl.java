@@ -54,4 +54,9 @@ public class TestModelServiceImpl implements TestModelService {
 	public boolean deleteModel(String naccid) {
 		return testModelRepository.deleteTestModel(naccid);
 	}
+
+	@Override
+	public List<TestModel> getModelByMultiPara(String naccid, String day, String year) {
+		return testModelRepository.findAllByMultiPara(naccid, year, day);
+	}
 }

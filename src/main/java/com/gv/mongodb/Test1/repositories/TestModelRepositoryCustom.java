@@ -19,6 +19,8 @@ public interface TestModelRepositoryCustom {
 	
 	List<TestModel>findAllByDay(String day);
 	
+	List<TestModel>findAllByMultiPara (String naccid, String year, String day);
+	
 	TestModel addTestModel(TestModel tm);
 	
 	boolean deleteTestModel(String naccid);
